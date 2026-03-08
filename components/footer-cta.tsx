@@ -47,26 +47,16 @@ export function FooterCta() {
 
       {/* Footer bottom with sweeping organic wave */}
       <div className="relative mt-8">
-        {/* Full-width SVG wave sweeping from bottom-left to top-right */}
-        <svg
-          className="block w-full"
-          viewBox="0 0 1440 300"
-          preserveAspectRatio="none"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Back layer - softer, broader sweep */}
-          <path
-            d="M0,100 C80,80 200,180 400,160 C600,140 800,60 1000,80 C1200,100 1350,40 1440,30 L1440,300 L0,300 Z"
-            fill="#DAEFB3"
-            opacity="0.5"
-          />
-          {/* Main wave - dynamic sweep from bottom-left curving to top-right */}
-          <path
-            d="M0,180 C100,140 250,220 450,180 C650,140 850,80 1050,100 C1200,115 1350,60 1440,50 L1440,300 L0,300 Z"
-            fill="#DAEFB3"
-          />
-        </svg>
+        {/* Full-width SVG wave using botton-wave.svg */}
+        <div 
+          className="block w-full h-[300px]"
+          style={{
+            backgroundImage: 'url(/images/botton-wave.svg)',
+            backgroundSize: '100% 100%',
+            backgroundPosition: 'bottom',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
 
         {/* Footer content positioned inside the thickest part of the wave (bottom) */}
         <div className="absolute inset-x-0 bottom-0 z-10 flex items-center justify-between px-6 pb-6 pt-4 md:px-8 md:pb-8 lg:px-12">
