@@ -55,27 +55,31 @@ export function ContactUsDialog({
                 <Input id="tanggal-lahir-anak" name="tanggal_lahir_anak" type="date" required />
               </div>
 
-              <fieldset className="md:col-span-2">
-                <legend className="mb-2 block text-sm font-medium">Unit yang dituju</legend>
-                <div className="flex flex-wrap gap-4">
-                  <label className="flex items-center gap-2 text-sm">
-                    <input type="radio" name="unit_dituju" value="TK" required />
-                    TK
-                  </label>
-                  <label className="flex items-center gap-2 text-sm">
-                    <input type="radio" name="unit_dituju" value="SD" required />
-                    SD
-                  </label>
-                  <label className="flex items-center gap-2 text-sm">
-                    <input type="radio" name="unit_dituju" value="SMP" required />
-                    SMP
-                  </label>
-                  <label className="flex items-center gap-2 text-sm">
-                    <input type="radio" name="unit_dituju" value="SMA" required />
-                    SMA
-                  </label>
-                </div>
-              </fieldset>
+              <div className="md:col-span-2">
+                <label htmlFor="unit-dituju" className="mb-2 block text-sm font-medium">
+                  Unit yang dituju
+                </label>
+                <select
+                  id="unit-dituju"
+                  name="unit_dituju"
+                  required
+                  defaultValue=""
+                  className="border-input bg-background focus-visible:border-ring focus-visible:ring-ring/50 h-9 w-full rounded-md border px-3 text-sm outline-none focus-visible:ring-[3px]"
+                >
+                  <option value="" disabled>
+                    Pilih unit
+                  </option>
+                  <option value="KB-TK Cor Yesu">KB-TK Cor Yesu</option>
+                  <option value="KB-TK Kebon Dalem">KB-TK Kebon Dalem</option>
+                  <option value="KB-TK Kebon Dalem 2">KB-TK Kebon Dalem 2</option>
+                  <option value="SD Cahaya Nur">SD Cahaya Nur</option>
+                  <option value="SD Kebon Dalem">SD Kebon Dalem</option>
+                  <option value="SD Kebon Dalem 2">SD Kebon Dalem 2</option>
+                  <option value="SD Maria Bintang Laut">SD Maria Bintang Laut</option>
+                  <option value="SD Pangudi Utami">SD Pangudi Utami</option>
+                  <option value="SMA Kebon Dalem">SMA Kebon Dalem</option>
+                </select>
+              </div>
 
               <div className="md:col-span-2">
                 <label htmlFor="nama-orang-tua" className="mb-2 block text-sm font-medium">
@@ -88,7 +92,22 @@ export function ContactUsDialog({
                 <label htmlFor="wa-orang-tua" className="mb-2 block text-sm font-medium">
                   No. WA Orang Tua Siswa
                 </label>
-                <Input id="wa-orang-tua" name="wa_orang_tua_siswa" type="tel" required />
+                <Input
+                  id="wa-orang-tua"
+                  name="wa_orang_tua_siswa"
+                  type="tel"
+                  inputMode="numeric"
+                  autoComplete="tel-national"
+                  pattern="[0-9]{10,15}"
+                  minLength={10}
+                  maxLength={15}
+                  placeholder="Contoh: 081234567890"
+                  title="Masukkan nomor handphone 10-15 digit tanpa spasi atau simbol"
+                  onInput={(e) => {
+                    e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '')
+                  }}
+                  required
+                />
               </div>
 
               <Button
