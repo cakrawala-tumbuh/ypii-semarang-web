@@ -1,6 +1,10 @@
 import { Instagram, MessageCircle } from "lucide-react"
 
-export function FooterCta() {
+type FooterCtaProps = {
+  onOpenContact: () => void
+}
+
+export function FooterCta({ onOpenContact }: FooterCtaProps) {
   return (
     <footer id="daftar">
       {/* PPDB CTA section */}
@@ -19,12 +23,13 @@ export function FooterCta() {
           {/* CTA rows */}
           <div className="mt-8 flex flex-col gap-4">
             <div className="flex items-center gap-4">
-              <a
-                href="#daftar"
+              <button
+                type="button"
+                onClick={onOpenContact}
                 className="shrink-0 rounded-full bg-oxblood px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 md:px-8 md:text-base"
               >
                 DAFTAR PPDB
-              </a>
+              </button>
               <p className="text-sm text-muted-foreground md:text-base">
                 Isi form di bawah, tim kami akan menghubungi dalam 1x24 jam
               </p>

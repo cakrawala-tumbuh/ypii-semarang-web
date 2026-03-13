@@ -1,6 +1,10 @@
 import Image from "next/image"
 
-export function HeroSection() {
+type HeroSectionProps = {
+  onOpenContact: () => void
+}
+
+export function HeroSection({ onOpenContact }: HeroSectionProps) {
   return (
     <section className="relative w-full">
       {/* Hero Image */}
@@ -58,12 +62,13 @@ export function HeroSection() {
 
       {/* CTA Buttons */}
       <div className="flex items-center justify-center gap-3 px-6 py-6">
-        <a
-          href="#daftar"
+        <button
+          type="button"
+          onClick={onOpenContact}
           className="rounded-full bg-oxblood px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 md:px-8 md:text-base"
         >
           DAFTAR PPDB 2025/2026
-        </a>
+        </button>
         <a
           href="#hubungi"
           className="rounded-full bg-tea-green px-6 py-3 text-sm font-semibold text-foreground transition-opacity hover:opacity-90 md:px-8 md:text-base"
