@@ -16,12 +16,6 @@ export function HeroSection({ onOpenContact }: HeroSectionProps) {
           className="object-cover"
           priority
         />
-        {/* Logo Badge */}
-        <div className="absolute right-4 top-4 flex h-16 w-16 items-center justify-center rounded-full bg-oxblood md:h-20 md:w-20">
-          <span className="text-center text-[10px] font-bold leading-tight text-primary-foreground md:text-xs">
-            KDSG
-          </span>
-        </div>
 
         {/* Hero Text Box */}
         <div className="absolute bottom-12 left-0 md:bottom-16 md:left-8 lg:left-12">
