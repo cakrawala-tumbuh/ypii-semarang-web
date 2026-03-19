@@ -9,8 +9,8 @@ export function TopBar() {
       </p>
       {/* Logo */}
       <Image
-        src="/images/logo copy.svg"
-        alt="Logo KDSG"
+        src="/images/ypii-logo.svg"
+        alt="Logo YPII"
         width={131}
         height={40}
         className="h-8 w-auto shrink-0 sm:h-10 md:h-12"
