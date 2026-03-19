@@ -43,7 +43,7 @@ export function BelajarTerbaikSection() {
         </div>
 
         {/* Right Column - Images */}
-        <div className="relative flex flex-1 gap-4">
+        <div className="relative flex flex-1 items-center gap-4">
           <div className="relative h-64 flex-1 overflow-hidden rounded-2xl md:h-80">
             <Image
               src="/images/students-1.jpg"
@@ -52,7 +52,7 @@ export function BelajarTerbaikSection() {
               className="object-cover"
             />
           </div>
-          <div className="relative mt-8 h-64 flex-1 overflow-hidden rounded-2xl md:h-80">
+          <div className="relative h-64 flex-1 overflow-hidden rounded-2xl md:h-80">
             <Image
               src="/images/students-2.jpg"
               alt="Siswa bereksperimen dengan proyek"
