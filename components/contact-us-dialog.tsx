@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState } from 'react'
+import { useActionState, useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { submitContactForm, type ContactFormState } from '@/app/actions/contact'
@@ -18,11 +18,25 @@ type ContactUsDialogProps = {
 
 const initialState: ContactFormState = { status: 'idle', message: '' }
 
+function useUtmParams() {
+  const [utm, setUtm] = useState({ source: '', medium: '', campaign: '' })
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search)
+    setUtm({
+      source: p.get('utm_source') ?? '',
+      medium: p.get('utm_medium') ?? '',
+      campaign: p.get('utm_campaign') ?? '',
+    })
+  }, [])
+  return utm
+}
+
 export function ContactUsDialog({
   open,
   onOpenChange,
 }: ContactUsDialogProps) {
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState)
+  const utm = useUtmParams()
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -60,6 +74,11 @@ export function ContactUsDialog({
 
             {state.status !== 'success' && (
               <form className="mt-6 grid gap-4 md:grid-cols-2" action={formAction}>
+                {/* UTM hidden inputs — diisi otomatis dari URL */}
+                {utm.source && <input type="hidden" name="utm_source" value={utm.source} />}
+                {utm.medium && <input type="hidden" name="utm_medium" value={utm.medium} />}
+                {utm.campaign && <input type="hidden" name="utm_campaign" value={utm.campaign} />}
+
                 <div className="md:col-span-2">
                   <label htmlFor="nama-anak" className="mb-2 block text-sm font-medium">
                     Nama Anak
