@@ -58,6 +58,51 @@ yarn dev
 ```
 Visit [http://localhost:3000](http://localhost:3000) to view the app.
 
+## Konfigurasi Environment (Odoo API)
+
+Form Contact Us mengirim data ke Odoo CRM via REST API. Konfigurasinya dibedakan per environment menggunakan file `.env.*.local` (otomatis di-gitignore — **jangan di-commit**).
+
+### File yang dibutuhkan
+
+| File | Dipakai saat |
+|------|-------------|
+| `.env.development.local` | `pnpm dev` |
+| `.env.production.local` | `pnpm build && pnpm start` |
+
+### `.env.development.local` (development / localhost)
+
+```env
+ODOO_API_URL=http://localhost:14069
+ODOO_API_DB=nama_database_dev
+# Basic Auth: base64 dari "admin:PASSWORD"
+ODOO_API_AUTH=
+```
+
+### `.env.production.local` (production)
+
+```env
+ODOO_API_URL=https://odoo.cantum-ypii.com
+ODOO_API_DB=nama_database_production
+# Basic Auth: base64 dari "admin:PASSWORD"
+ODOO_API_AUTH=
+```
+
+### Generate nilai `ODOO_API_AUTH`
+
+```bash
+echo -n "admin:PASSWORD_ANDA" | base64
+```
+
+Salin output-nya ke field `ODOO_API_AUTH`.
+
+### Cara kerja
+
+- `pnpm dev` → otomatis membaca `.env.development.local` → hit Odoo localhost
+- `pnpm build && pnpm start` → otomatis membaca `.env.production.local` → hit Odoo production
+- Tidak perlu mengubah konfigurasi apapun saat berpindah environment
+
+> Credential **tidak pernah terekspos ke browser** — semua request ke Odoo dilakukan dari server via Next.js Server Action (`app/actions/contact.ts`).
+
 ### Building for Production
 ```bash
 pnpm build
