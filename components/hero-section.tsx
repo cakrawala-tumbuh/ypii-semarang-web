@@ -8,7 +8,7 @@ export function HeroSection({ onOpenContact }: HeroSectionProps) {
   return (
     <section className="relative w-full">
       {/* Hero Image */}
-      <div className="relative h-[500px] w-full md:h-[600px] lg:h-[700px]">
+      <div className="relative h-[620px] w-full md:h-[720px] lg:h-[820px]">
         <Image
           src="/images/hero-bg.jpg"
           alt="SMA Kebon Dalem campus with traditional bamboo architecture"
@@ -18,7 +18,7 @@ export function HeroSection({ onOpenContact }: HeroSectionProps) {
         />
 
         {/* Hero Text Box */}
-        <div className="absolute bottom-12 left-0 md:bottom-16 md:left-8 lg:left-12">
+        <div className="absolute top-0 left-0 md:top-8 md:left-8 lg:left-12">
           <div className="bg-oxblood px-6 py-6 md:rounded-lg md:px-10 md:py-8">
             <div className="flex flex-col gap-1">
               <div className="flex items-baseline gap-3">
