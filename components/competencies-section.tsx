@@ -20,49 +20,49 @@ const competencies: Competency[] = [
   {
     number: 1,
     title: "CRITICAL THINKING",
-    subtitle: "Mengubah Masalah Jadi Solusi Nyata",
+    subtitle: "Cerdas Menalar: Jawaban Nyata untuk Masalah Nyata",
     description:
-      "Siswa dilatih berpikir kritis, meneliti, dan menemukan solusi dari tantangan dunia nyata.",
+      "Anak Anda dilatih berpikir kritis, menimbang informasi secara bertanggung jawab, dan menemukan solusi dari tantangan dunia nyata — bukan sekadar menghafal, tetapi sungguh-sungguh memahami.",
     icon: Brain,
   },
   {
     number: 2,
     title: "TEAMWORK",
-    subtitle: "Kuat Bersama dalam Satu Tujuan",
+    subtitle: "Solider Bersama: Kepedulian yang Menggerakkan",
     description:
-      "Siswa belajar bekerja dalam tim, berbagi peran, dan mencapai hasil terbaik bersama.",
+      "Anak Anda belajar bekerja dalam tim dengan semangat solidaritas sejati — mendengarkan, berbagi peran, dan mencapai hasil terbaik karena benar-benar peduli satu sama lain.",
     icon: Users,
   },
   {
     number: 3,
     title: "PUBLIC SPEAKING",
-    subtitle: "Ide Hebat, Disampaikan dengan Percaya Diri",
+    subtitle: "Otentik dan Berani Tampil: Suaramu Berharga",
     description:
-      "Siswa terlatih menyampaikan ide secara jelas, meyakinkan, dan profesional.",
+      "Anak Anda dilatih menyampaikan gagasan dengan jelas dan meyakinkan — percaya pada nilai dirinya sendiri dan berani bersuara di depan banyak orang, bukan karena terpaksa, tetapi karena tahu suaranya bermakna.",
     icon: Mic,
   },
   {
     number: 4,
     title: "ENTREPRENEURSHIP",
-    subtitle: "Dari Ide Jadi Nilai & Dampak",
+    subtitle: "Cerdas Berkreasi: Dari Ide Kecil Jadi Dampak Besar",
     description:
-      "Siswa memahami bisnis dari praktik langsung, dari perencanaan hingga penjualan.",
+      "Anak Anda belajar menghidupkan kreativitasnya menjadi aksi nyata — dari inisiatif, perencanaan, hingga eksekusi yang memberi dampak bagi dirinya dan orang-orang di sekitarnya.",
     icon: Lightbulb,
   },
   {
     number: 5,
     title: "CREATIVITY",
-    subtitle: "Berani Berbeda, Siap Berinovasi",
+    subtitle: "Otentik Berkarya: Berani Berbeda, Bebas Berinovasi",
     description:
-      "Siswa didorong untuk berpikir kreatif, bereksperimen, dan menciptakan solusi orisinal.",
+      "Anak Anda didorong mengeksplorasi ide-ide unik dan menciptakan solusi orisinal — merayakan kekhasan dirinya sebagai kekuatan, bukan kelemahan.",
     icon: Palette,
   },
   {
     number: 6,
-    title: "HOLISTIC",
-    subtitle: "Cerdas, Berkarakter, dan Peduli",
+    title: "COMPASSIONATE",
+    subtitle: "Hidup Solider dari Iman yang Hidup akan Penyelenggaraan Ilahi: Berakar, Bergerak, Berbagi",
     description:
-      "Pendidikan menyeluruh yang menumbuhkan iman, empati, dan tanggung jawab pada diri dan sesama.",
+      "Anak Anda tumbuh sebagai pribadi yang berakar dalam keyakinan akan Penyelenggaraan Ilahi — percaya hidupnya disertai Tuhan, dan dari iman yang hidup itulah lahir kepedulian nyata bagi sesama, komunitas, dan alam semesta.",
     icon: Heart,
   },
 ]
