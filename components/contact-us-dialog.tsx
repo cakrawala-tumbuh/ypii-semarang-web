@@ -107,6 +107,8 @@ export function ContactUsDialog({
                     <option value="" disabled>
                       Pilih unit
                     </option>
+                    <option value="KB-TK Kebon Dalem">KB-TK Kebon Dalem</option>
+                    <option value="KB-TK Kebon Dalem 2">KB-TK Kebon Dalem 2</option>
                     <option value="SD Kebon Dalem">SD Kebon Dalem</option>
                     <option value="SD Kebon Dalem 2">SD Kebon Dalem 2</option>
                     <option value="SMA Kebon Dalem">SMA Kebon Dalem</option>
