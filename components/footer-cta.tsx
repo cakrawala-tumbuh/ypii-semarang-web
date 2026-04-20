@@ -1,5 +1,7 @@
 import { Instagram, MessageCircle } from "lucide-react"
 
+import { trackMatomoEvent } from "@/lib/matomo"
+
 type FooterCtaProps = {
   onOpenContact: () => void
 }
@@ -25,7 +27,14 @@ export function FooterCta({ onOpenContact }: FooterCtaProps) {
             <div className="flex items-center gap-4">
               <button
                 type="button"
-                onClick={onOpenContact}
+                onClick={() => {
+                  trackMatomoEvent({
+                    category: "PPDB",
+                    action: "click",
+                    name: "footer_daftar_ppdb",
+                  })
+                  onOpenContact()
+                }}
                 className="shrink-0 rounded-full bg-oxblood px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 md:px-8 md:text-base"
               >
                 DAFTAR PPDB

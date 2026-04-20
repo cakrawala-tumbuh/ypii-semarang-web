@@ -1,5 +1,7 @@
 import Image from "next/image"
 
+import { trackMatomoEvent } from "@/lib/matomo"
+
 type HeroSectionProps = {
   onOpenContact: () => void
 }
@@ -58,7 +60,14 @@ export function HeroSection({ onOpenContact }: HeroSectionProps) {
       <div className="flex items-center justify-center gap-3 px-6 py-6">
         <button
           type="button"
-          onClick={onOpenContact}
+          onClick={() => {
+            trackMatomoEvent({
+              category: "PPDB",
+              action: "click",
+              name: "hero_daftar_ppdb",
+            })
+            onOpenContact()
+          }}
           className="rounded-full bg-oxblood px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 md:px-8 md:text-base"
         >
           DAFTAR PPDB 2025/2026
