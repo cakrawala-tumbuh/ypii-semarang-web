@@ -73,7 +73,16 @@ export function HeroSection({ onOpenContact }: HeroSectionProps) {
           DAFTAR PPDB 2025/2026
         </button>
         <a
-          href="#hubungi"
+          href="https://wa.me/628135955840"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() =>
+            trackMatomoEvent({
+              category: "Hubungi Kami",
+              action: "click",
+              name: "hero_hubungi_kami",
+            })
+          }
           className="rounded-full bg-tea-green px-6 py-3 text-sm font-semibold text-foreground transition-opacity hover:opacity-90 md:px-8 md:text-base"
         >
           HUBUNGI KAMI

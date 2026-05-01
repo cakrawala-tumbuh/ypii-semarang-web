@@ -45,7 +45,16 @@ export function FooterCta({ onOpenContact }: FooterCtaProps) {
             </div>
             <div id="hubungi" className="flex items-center gap-4">
               <a
-                href="#hubungi"
+                href="https://wa.me/628135955840"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackMatomoEvent({
+                    category: "Hubungi Kami",
+                    action: "click",
+                    name: "footer_hubungi_kami",
+                  })
+                }
                 className="shrink-0 rounded-full bg-tea-green px-6 py-3 text-sm font-semibold text-foreground transition-opacity hover:opacity-90 md:px-8 md:text-base"
               >
                 HUBUNGI KAMI
